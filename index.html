@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Phishing Awareness Quiz</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Spot the Phish!</h1>
-  <div id="quiz-box">
-    <p id="message">Loading question...</p>
-    <button onclick="answer('Phishing')">Phishing</button>
-    <button onclick="answer('Legit')">Legit</button>
-    <p id="feedback"></p>
-    <p id="score"></p>
+  <div class="container">
+    <h1>🚨 Spot the Phish! 🚨</h1>
+    <div id="quiz-box" class="card">
+      <p id="message">Loading question...</p>
+      <div class="button-group">
+        <button onclick="answer('Phishing')" class="phishing-btn">Phishing</button>
+        <button onclick="answer('Legit')" class="legit-btn">Legit</button>
+      </div>
+      <p id="feedback"></p>
+      <p id="score"></p>
+    </div>
+    <footer>
+      <p>Stay safe online. Learn to recognize phishing!</p>
+    </footer>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
