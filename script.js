@@ -11,6 +11,10 @@ const questions = [
   { message: "Library books due soon. Click here to review your checked out items.", correctAnswer: "Legit", explanation: "A routine notification from your school's library system." }
 ];
 
+// Load saved custom questions from localStorage
+const savedCustomQuestions = JSON.parse(localStorage.getItem("customQuestions")) || [];
+savedCustomQuestions.forEach(q => questions.push(q));
+
 let currentQuestion = 0;
 let score = 0;
 
@@ -61,13 +65,28 @@ function addCustomQuestion() {
     return;
   }
 
-  questions.push({
+  const newQuestion = {
     message: questionText,
     correctAnswer: correctAnswer,
     explanation: explanationText
-  });
+  };
+
+  questions.push(newQuestion);
+
+  savedCustomQuestions.push(newQuestion);
+  localStorage.setItem("customQuestions", JSON.stringify(savedCustomQuestions));
 
   document.getElementById("custom-question").value = "";
   document.getElementById("custom-explanation").value = "";
 
-  alert("Your
+  currentQuestion = 0;
+  score = 0;
+  document.querySelector(".button-group").style.display = "flex";
+  document.getElementById("restart-btn").style.display = "none";
+
+  alert("✅ Your question was added and saved! The quiz will now restart.");
+
+  loadQuestion();
+}
+
+loadQuestion();
