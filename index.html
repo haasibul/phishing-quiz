@@ -10,18 +10,33 @@
   <div class="container">
     <h1>🚨 Spot the Phish! 🚨</h1>
     <div id="quiz-box" class="card">
+      <p id="progress"></p>
       <p id="message">Loading question...</p>
       <div class="button-group">
-        <button onclick="answer('Phishing')" class="phishing-btn">Phishing</button>
-        <button onclick="answer('Legit')" class="legit-btn">Legit</button>
+        <button onclick="answer('Phishing')" class="phishing-btn">🚩 Phishing</button>
+        <button onclick="answer('Legit')" class="legit-btn">✅ Legit</button>
       </div>
       <p id="feedback"></p>
       <p id="score"></p>
+      <button id="restart-btn" onclick="restartQuiz()" style="display: none;">🔄 Restart Quiz</button>
     </div>
+
+    <div class="custom-question-form card">
+      <h2>Add Your Own Question 🎁</h2>
+      <input type="text" id="custom-question" placeholder="Enter question here" />
+      <select id="custom-answer">
+        <option value="Phishing">Phishing</option>
+        <option value="Legit">Legit</option>
+      </select>
+      <textarea id="custom-explanation" placeholder="Enter explanation here"></textarea>
+      <button onclick="addCustomQuestion()">➕ Add Question</button>
+    </div>
+
     <footer>
-      <p>Stay safe online. Learn to recognize phishing!</p>
+      <p>Stay safe online. Learn to recognize phishing! 🚀</p>
     </footer>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
