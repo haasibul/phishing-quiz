@@ -8,47 +8,20 @@
 </head>
 <body>
   <div class="container">
-    <h1>🛡️ Spot the Phish! 🎯</h1>
-    <p class="subtitle">Test your cybersecurity awareness</p>
-
+    <h1>🚨 Spot the Phish! 🚨</h1>
     <div id="quiz-box" class="card">
-      <p id="progress">Question 0 / 0</p>
       <p id="message">Loading question...</p>
-      <hr>
       <div class="button-group">
-        <button onclick="answer('Phishing')" class="phishing-btn">⚠️ PHISHING</button>
-        <button onclick="answer('Legit')" class="legit-btn">✅ LEGIT</button>
+        <button onclick="answer('Phishing')" class="phishing-btn">Phishing</button>
+        <button onclick="answer('Legit')" class="legit-btn">Legit</button>
       </div>
       <p id="feedback"></p>
-      <div class="score-box">
-        <p>📊 Your Score</p>
-        <p id="score">0 / 0</p>
-      </div>
-      <button id="restart-btn" onclick="restartQuiz()" style="display:none;">🔄 Restart Quiz</button>
+      <p id="score"></p>
     </div>
-
-    <h2 style="color:#fff; margin-top:30px;">➕ Add Your Own Quiz Question</h2>
-    <div id="custom-quiz-form" class="card">
-      <label>Question:</label>
-      <input type="text" id="custom-question" placeholder="Enter your question here" />
-
-      <label>Correct Answer:</label>
-      <select id="custom-answer">
-        <option value="Phishing">Phishing</option>
-        <option value="Legit">Legit</option>
-      </select>
-
-      <label>Explanation:</label>
-      <input type="text" id="custom-explanation" placeholder="Enter explanation here" />
-
-      <button onclick="addCustomQuestion()" class="custom-btn">➕ Add Question</button>
-    </div>
-
     <footer>
       <p>Stay safe online. Learn to recognize phishing!</p>
     </footer>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
