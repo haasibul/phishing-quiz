@@ -12,6 +12,7 @@
     <p class="subtitle">Test your cybersecurity awareness</p>
 
     <div id="quiz-box" class="card">
+      <p id="progress">Question 0 / 0</p>
       <p id="message">Loading question...</p>
       <hr>
       <div class="button-group">
@@ -23,6 +24,24 @@
         <p>📊 Your Score</p>
         <p id="score">0 / 0</p>
       </div>
+      <button id="restart-btn" onclick="restartQuiz()" style="display:none;">🔄 Restart Quiz</button>
+    </div>
+
+    <h2 style="color:#fff; margin-top:30px;">➕ Add Your Own Quiz Question</h2>
+    <div id="custom-quiz-form" class="card">
+      <label>Question:</label>
+      <input type="text" id="custom-question" placeholder="Enter your question here" />
+
+      <label>Correct Answer:</label>
+      <select id="custom-answer">
+        <option value="Phishing">Phishing</option>
+        <option value="Legit">Legit</option>
+      </select>
+
+      <label>Explanation:</label>
+      <input type="text" id="custom-explanation" placeholder="Enter explanation here" />
+
+      <button onclick="addCustomQuestion()" class="custom-btn">➕ Add Question</button>
     </div>
 
     <footer>
